@@ -1,0 +1,84 @@
+class Person {
+    private String name;
+    private int yearOfBirth;
+
+    public Person(String name, int yearOfBirth) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    @Override
+    public String toString() {
+        return "Person [name=" + name + ", yearOfBirth=" + yearOfBirth + "]";
+    }
+}
+
+class Student extends Person {
+    private String major;
+
+    public Student(String name, int yearOfBirth, String major) {
+        super(name, yearOfBirth);
+        this.major = major;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    @Override
+    public String toString() {
+        return "Student [name=" + getName() + ", yearOfBirth=" + getYearOfBirth() + ", major=" + major + "]";
+    }
+}
+
+class Instructor extends Person {
+    private double salary;
+
+    public Instructor(String name, int yearOfBirth, double salary) {
+        super(name, yearOfBirth);
+        this.salary = salary;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Instructor [name=" + getName() + ", yearOfBirth=" + getYearOfBirth() + ", salary=" + salary + "]";
+    }
+}
+
+public class TestPersonClasses {
+    public static void main(String[] args) {
+        Student student = new Student("Jay Lourd", 2003, "Information Technology");
+        Instructor instructor = new Instructor("Prof. Cliff", 1980, 29000.00);
+
+        System.out.println(student.toString());
+        System.out.println(instructor.toString());
+    }
+}
